@@ -1,103 +1,87 @@
 import Image from "next/image";
 
+
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <main className="min-h-screen bg-base-100 text-base-content">
+      <section className="hero relative min-h-screen bg-black text-primary-content overflow-hidden">
+        {/* Background video */}
+        <video
+          className="absolute top-0 left-0 w-full h-full object-cover z-0"
+          src="/images/hero-video.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          fallbacksrc="/images/hero-pic.jpg"
         />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+        {/* Overlay to darken the video for better text visibility (optional) */}
+        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-10"></div>
+
+        {/* Content */}
+        <div className="hero-content flex-col lg:flex-row-reverse relative z-20">
+          <div>
+            <h1 className="text-5xl font-bold">Welcome to Ruma's Delights</h1>
+            <p className="pl-1 py-6 text-lg">
+              Authentic Bengali and International Cuisine Served Fresh
+            </p>
+            <button className="btn btn-accent">View Menu</button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      {/* Featured Dishes */}
+      <section className="bg-base-200 py-16 px-6 lg:px-24">
+        <h2 className="text-4xl font-semibold text-center mb-12">
+          Featured Dishes
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="card shadow-lg">
+              <figure>
+                <img src={`/images/dish-${i}.jpeg`} alt={`Dish ${i}`} />
+              </figure>
+              <div className="card-body">
+                <h3 className="card-title">Delicious Dish {i}</h3>
+                <p>A taste of Bengal with a modern twist.</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      {/* <section className="py-16 px-6 lg:px-24">
+        <h2 className="text-4xl font-semibold text-center mb-12">
+          Customer Reviews
+        </h2>
+        <div className="carousel w-full p-6 space-x-4">
+          {[1, 2, 3, 4, 5, 6].map((i) => (
+            <div key={i} className="carousel-item w-full md:w-1/2 lg:w-1/3">
+              <div className="card bg-base-100 shadow-xl">
+                <div className="card-body">
+                  <p>
+                    "The food was incredible! Best Bengali meal I've ever had."
+                  </p>
+                  <div className="card-actions justify-end">
+                    <div className="badge badge-outline">Happy Customer</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section> */}
+
+      {/* Call to Action */}
+      <section className="bg-primary py-16 text-primary-content text-center">
+        <h2 className="text-4xl font-semibold mb-4">Visit Us Today</h2>
+        <p className="mb-6 text-lg">
+          Join us for an unforgettable dining experience.
+        </p>
+        <button className="btn btn-accent">Make a Reservation</button>
+      </section>
+    </main>
   );
 }
