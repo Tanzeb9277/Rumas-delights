@@ -3,7 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { UtensilsCrossed, ArrowRight } from "lucide-react"
+import { ArrowRight, MapPin, Phone, Mail, Clock } from "lucide-react";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -214,6 +214,82 @@ export default function Home() {
               </motion.div>
             ))}
           </motion.div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-base-100">
+        <div className="container mx-auto px-4 md:px-6">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeIn}
+          className="card bg-base-200 shadow-xl"
+        >
+          <div className="card-body p-0">
+            <div className="grid grid-cols-1 md:grid-cols-2">
+              <div className="p-8">
+                <h2 className="text-2xl font-bold mb-6 text-primary">
+                  Visit Us
+                </h2>
+                <div className="space-y-4">
+                  <div className="flex items-start">
+                    <MapPin className="h-5 w-5 text-secondary mt-0.5 mr-3" />
+                    <div>
+                      <h3 className="font-medium">Address</h3>
+                      <p className="text-base-content/70">
+                        3302 Shallowford Road, Atlanta, GA 30341
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <Phone className="h-5 w-5 text-secondary mt-0.5 mr-3" />
+                    <div>
+                      <h3 className="font-medium">Phone</h3>
+                      <p className="text-base-content/70">(770) 717-7004</p>
+                      <p className="text-base-content/70">(770) 617-8995</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <Mail className="h-5 w-5 text-secondary mt-0.5 mr-3" />
+                    <div>
+                      <h3 className="font-medium">Email</h3>
+                      <p className="text-base-content/70">
+                        info@rumasdelights.com
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <Clock className="h-5 w-5 text-secondary mt-0.5 mr-3" />
+                    <div>
+                      <h3 className="font-medium">Hours</h3>
+                      <p className="text-base-content/70">
+                        Monday - Thursday: 11am - 10pm
+                      </p>
+                      <p className="text-base-content/70">
+                        Friday - Saturday: 11am - 11pm
+                      </p>
+                      <p className="text-base-content/70">Sunday: 12pm - 9pm</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div className="h-full w-full rounded-lg overflow-hidden">
+                  <iframe
+                    src="https://www.google.com/maps/embed/v1/place?q=Rumas%20Delights%2C%20Shallowford%20Road%2C%20Chamblee%2C%20GA%2C%20USA&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0, minHeight: "400px" }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
         </div>
       </section>
     </main>
