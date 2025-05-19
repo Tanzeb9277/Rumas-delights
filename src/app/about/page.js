@@ -208,13 +208,18 @@ export default function AboutPage() {
                   </div>
                 </div>
               </div>
-              <div className="relative h-64 md:h-auto">
-                <Image
-                  src="/placeholder.svg?height=600&width=800&text=Map+Location"
-                  alt="Map location"
-                  fill
-                  className="object-cover"
-                />
+              <div>
+                <div className="h-full w-full rounded-lg overflow-hidden">
+                  <iframe
+                    src="https://www.google.com/maps/embed/v1/place?q=Rumas%20Delights%2C%20Shallowford%20Road%2C%20Chamblee%2C%20GA%2C%20USA&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0, minHeight: "400px" }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
               </div>
             </div>
           </div>
