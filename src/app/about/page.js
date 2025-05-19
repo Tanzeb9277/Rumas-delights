@@ -23,10 +23,16 @@ const staggerContainer = {
   },
 };
 
+
+
 export default function AboutPage() {
+
+
   return (
-    <main className="min-h-screen mt-18
-     py-12 bg-base-100">
+    <main
+      className="min-h-screen mt-18
+     py-12 bg-base-100"
+    >
       <div className="container px-4 md:px-6 mx-auto">
         {/* About Header */}
         <motion.div
@@ -41,24 +47,30 @@ export default function AboutPage() {
 
         {/* Story Section */}
         <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
           className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16"
         >
           <motion.div
-            variants={fadeIn}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
             className="relative aspect-square rounded-lg overflow-hidden"
           >
             <Image
-              src="/placeholder.svg?height=800&width=800&text=Ruma's+Delights"
+              src="/images/about.jpg"
               alt="Ruma's Delights Restaurant"
               fill
               className="object-cover"
+              priority
             />
           </motion.div>
-          <motion.div variants={fadeIn}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
             <h2 className="text-2xl font-bold mb-4 text-primary">
               From Dhaka to Atlanta
             </h2>
@@ -160,7 +172,7 @@ export default function AboutPage() {
                     <div>
                       <h3 className="font-medium">Address</h3>
                       <p className="text-base-content/70">
-                        123 Bengali Lane, Atlanta, GA 30303
+                        3302 Shallowford Road, Atlanta, GA 30341
                       </p>
                     </div>
                   </div>
@@ -168,7 +180,8 @@ export default function AboutPage() {
                     <Phone className="h-5 w-5 text-secondary mt-0.5 mr-3" />
                     <div>
                       <h3 className="font-medium">Phone</h3>
-                      <p className="text-base-content/70">(404) 555-1234</p>
+                      <p className="text-base-content/70">(770) 717-7004</p>
+                      <p className="text-base-content/70">(770) 617-8995</p>
                     </div>
                   </div>
                   <div className="flex items-start">

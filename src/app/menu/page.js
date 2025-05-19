@@ -28,21 +28,32 @@ export default function MenuPage() {
     {
       name: "Appetizers",
       items: [
-        { name: "Beguni", description: "Eggplant fritters", price: "$6.99" },
         {
-          name: "Shingara",
-          description: "Bengali samosas with spiced potatoes",
+          name: "Chotpoti",
+          description:
+            "Spicy and tangy chickpeas and potatoes with diced peppers and grated boiled eggs",
+          price: "$6.99",
+        },
+        {
+          name: "Samosa",
+          description: "Bengali samosas with spiced potatoes (2 pcs.)",
+          price: "$3.99",
+        },
+        {
+          name: "Fuchka (Pani Puri)",
+          description: "Crispy potato-filled puris",
           price: "$5.99",
         },
         {
-          name: "Phuchka",
-          description: "Crispy hollow puris filled with spiced water",
-          price: "$7.99",
+          name: "Pakora",
+          description: "Crispy fritters made with vegetables (2 pcs.)",
+          price: "$2.99",
         },
         {
-          name: "Chicken Chop",
-          description: "Breaded and fried chicken cutlets",
-          price: "$8.99",
+          name: "Puffed Pastry",
+          description:
+            "Delicious puff pastries served with either chicken or beef filling",
+          price: "$2.99",
         },
       ],
     },
@@ -50,71 +61,218 @@ export default function MenuPage() {
       name: "Main Courses",
       items: [
         {
-          name: "Ilish Bhapa",
-          description: "Steamed hilsa fish with mustard sauce",
-          price: "$18.99",
-        },
-        {
-          name: "Kosha Mangsho",
-          description: "Slow-cooked Bengali mutton curry",
-          price: "$17.99",
-        },
-        {
-          name: "Chingri Malai Curry",
-          description: "Prawns cooked in coconut milk",
-          price: "$19.99",
-        },
-        {
-          name: "Doi Maach",
-          description: "Fish cooked in yogurt gravy",
-          price: "$16.99",
-        },
-        {
-          name: "Shorshe Ilish",
-          description: "Hilsa fish in mustard gravy",
-          price: "$21.99",
-        },
-      ],
-    },
-    {
-      name: "Vegetarian Specialties",
-      items: [
-        {
-          name: "Shukto",
-          description: "Mixed vegetable stew with bitter gourd",
-          price: "$12.99",
-        },
-        {
-          name: "Aloo Posto",
-          description: "Potatoes cooked with poppy seeds",
+          name: "Butter Chicken",
+          description:
+            "Rich, creamy, and mildly spiced. Made with tender pieces of chicken cooked in a tomato-based sauce enriched with butter and cream",
           price: "$11.99",
         },
         {
-          name: "Cholar Dal",
-          description: "Bengal gram lentils with coconut",
-          price: "$10.99",
+          name: "Beef Bhuna",
+          description: `Beef Bhuna is a traditional Bengali dish known for its deep, rich flavors and thick, spiced gravy. The word "bhuna" refers to the slow cooking process where spices and meat are fried and simmered together until the oil separates and the gravy thickens`,
+          price: "$11.99",
         },
         {
-          name: "Lau Ghonto",
-          description: "Bottle gourd curry with lentil dumplings",
-          price: "$12.99",
+          name: "Karrai Ghost (Goat)",
+          description: `Tender pieces of goat meat cooked in a rich, spicy gravy with a blend of aromatic spices`,
+          price: "$14.99",
+        },
+        {
+          name: "Shrimp Malai Curry",
+          description:
+            "Made with tender shrimp cooked in a rich, creamy coconut milk-based gravy",
+          price: "$14.99",
+        },
+        {
+          name: "Shrimp Dupiazi",
+          description:
+            "Juicy shrimp simmered in a semi-thick gravy made with onions, tomatoes, ginger, garlic",
+          price: "$14.99",
+        },
+        {
+          name: "Fish Dupiazi (Salmon)",
+          description:
+            "Savory, slightly sweet, and aromatic dish with bold onion flavor, made with fresh salmon",
+          price: "$14.99",
+        },
+        {
+          name: "Fish Dupiazi (Rui)",
+          description:
+            "Savory, slightly sweet, and aromatic dish with bold onion flavor made with fresh Rui",
+          price: "$11.99",
+        },
+        {
+          name: "Mixed Grill Kebab",
+          description:
+            "Assortment of different types meats marinated with a unique blend of spices, yogurt, herbs grilled over an open flame, giving them a smoky, charred aroma and juicy texture",
+          price: "$14.99",
         },
       ],
     },
     {
-      name: "Rice & Breads",
+      name: "International Menu",
       items: [
         {
-          name: "Basanti Pulao",
-          description: "Sweet yellow rice with dry fruits",
-          price: "$8.99",
+          name: "Beef Burger with fries",
+          description: "Served hot and fresh alongside crispy french fries",
+          price: "$9.99",
         },
-        { name: "Bhaat", description: "Steamed Bengali rice", price: "$3.99" },
-        { name: "Luchi", description: "Deep-fried flatbread", price: "$4.99" },
         {
-          name: "Radhaballavi",
-          description: "Stuffed lentil puris",
+          name: "Veggie Burger with fries",
+          description: `Delicious and satisfying plant-based alternative to the classic burger meal`,
+          price: "$9.99",
+        },
+        {
+          name: "Philly Cheese Steak with fries",
+          description:
+            "Mouthwatering combination of thinly sliced beef, melted cheese, and a soft hoagie roll",
+          price: "$9.99",
+        },
+        {
+          name: "Chicken Fajita",
+          description:
+            "Marinated grilled chicken strips served with sautéed bell peppers and onions, typically wrapped in warm tortillas",
+          price: "$9.99",
+        },
+        {
+          name: "Quesadilla",
+          description:
+            "Crispy on the outside, gooey on the inside, and packed with flavor",
+          price: "$9.99",
+        },
+        {
+          name: "Spaghetti Pasta",
+          description:
+            "Classic Italian pasta dish known for its long, thin noodles and rich, flavorful sauces",
+          price: "$9.99",
+        },
+        {
+          name: "Penne Pasta",
+          description: "Light golden pasta with vibrant sauces",
+          price: "$9.99",
+        },
+        {
+          name: "Linguine Pasta",
+          description: "Classic Italian pasta",
+          price: "$9.99",
+        },
+        {
+          name: "Chili Chicken",
+          description:
+            "Combination of crispy fried chicken with a spicy, tangy, and slightly sweet sauce",
+          price: "$11.99",
+        },
+        {
+          name: "Mongolian Beef",
+          description:
+            "Tender, thinly sliced beef cooked in a savory, slightly sweet, and flavorful sauce",
+          price: "$11.99",
+        },
+        {
+          name: "Fried Rice",
+          description: "Classic chinese style fried rice",
+          price: "$6.99",
+        },
+      ],
+    },
+    {
+      name: "Sides",
+      items: [
+        {
+          name: "Haleem",
+          description:
+            "Deeply flavorful and hearty dish slow-cooked with meat, lentils, and grains, and a combination of traditional spices",
           price: "$5.99",
+        },
+        {
+          name: "Chicken Corn Soup",
+          description:
+            "Light, comforting soup made with shredded chicken, sweet corn, and a mildly seasoned broth",
+          price: "$4.99",
+        },
+        {
+          name: "Daal",
+          description: "Simple yet flavorful lentil stew",
+          price: "$4.99",
+        },
+        {
+          name: "Shami Kebab",
+          description:
+            "Flavorful, tender patty made primarily from ground meat and lentils",
+          price: "$4.99",
+        },
+        {
+          name: "Garden Salad",
+          description: "A colorful salad, made with fresh vegetables",
+          price: "$5.99",
+        },
+      ],
+    },
+
+    {
+      name: "Rice Dishes",
+      items: [
+        {
+          name: "Chicken Roast Pulao",
+          description:
+            "Fragrant basmati rice cooked together with tender, spiced roasted chicken and a blend of whole spices",
+          price: "$9.99",
+        },
+        {
+          name: "Rice Pulao",
+          description: "Fragrant and lightly spiced rice",
+          price: "$1.99",
+        },
+        {
+          name: "Beef Biryani",
+          description:
+            "Marinated tender pieces of spiced beef with fragrant basmati rice, layered and cooked together",
+          price: "$11.99",
+        },
+        {
+          name: "Chicken Biryani",
+          description: "Marinated chicken pieces with fragrant basmati rice",
+          price: "$11.99",
+        },
+        {
+          name: "Beef Tehari",
+          description:
+            "Fragrant, spicy, and flavorful combination of tender beef cooked together with aromatic basmati rice and a rich blend of spices",
+          price: "$9.99",
+        },
+      ],
+    },
+    {
+      name: "Breads",
+      items: [
+        {
+          name: "Porota (Paratha)",
+          description:
+            "South Asian flatbread known for its flaky, layered texture and rich, buttery taste",
+          price: "$1.99",
+        },
+        {
+          name: "Moghlai Porota",
+          description:
+            "Golden, flaky, and crisp South Asian flatbread stuffed with a savory filling",
+          price: "$5.99",
+        },
+        { name: "Luchi", description: "Deep-fried flatbread", price: "$1.99" },
+        {
+          name: "Daal Puri",
+          description:
+            "Crispy yet soft flatbread with a savory, mildly spicy lentil center",
+          price: "$1.99",
+        },
+        {
+          name: "Naan",
+          description:
+            "Soft, leavened flatbread baked in a tandoor (clay oven)",
+          price: "$1.99",
+        },
+        {
+          name: "Roti",
+          description: "Whole wheat flatbread",
+          price: "$0.99",
         },
       ],
     },
@@ -122,24 +280,79 @@ export default function MenuPage() {
       name: "Desserts",
       items: [
         {
-          name: "Roshogolla",
-          description: "Cottage cheese balls in sugar syrup",
-          price: "$5.99",
-        },
-        { name: "Mishti Doi", description: "Sweet yogurt", price: "$4.99" },
-        {
-          name: "Sandesh",
-          description: "Sweet cottage cheese fudge",
-          price: "$6.99",
+          name: "Balushai",
+          description: "Rich, deep-fried dessert known for its flaky texture",
+          price: "$1.99",
         },
         {
-          name: "Patishapta",
-          description: "Bengali crepes with coconut filling",
-          price: "$7.99",
+          name: "Mishti Doi",
+          description:
+            "Traditional Bengali sweetened yogurt dessert, loved for its creamy texture and caramelized sweetness",
+          price: "$4.99",
+        },
+        {
+          name: "Shondesh",
+          description:
+            "Classic Bengali sweet made primarily from fresh paneer (chena) and sugar",
+          price: "$1.99",
+        },
+        {
+          name: "Chomchom",
+          description:
+            "Classic Bengali sweet known for its soft, spongy texture and sweet, fragrant flavor",
+          price: "$1.99",
+        },
+        {
+          name: "Kalojam",
+          description:
+            "Rich and popular South Asian sweet known for its deep, dark color and intense flavor",
+          price: "$1.99",
+        },
+        {
+          name: "Kheer",
+          description: "Creamy and sweet rice pudding",
+          price: "$4.99",
+        },
+        {
+          name: "Malaichop",
+          description: "Fresh, creamy, malai-based dessert",
+          price: "$4.99",
+        },
+        {
+          name: "Pranhara",
+          description:
+            "Sweet stuffed flatbread made with a sweet lentil filling",
+          price: "$1.99",
+        },
+      ],
+    },
+    {
+      name: "Drinks",
+      items: [
+        {
+          name: "Soda",
+          description: "",
+          price: "$1.99",
+        },
+        {
+          name: "Tea",
+          description: "",
+          price: "$4.99",
+        },
+        {
+          name: "Sweet Lassi",
+          description: "",
+          price: "$1.99",
+        },
+        {
+          name: "Mango Lassi",
+          description: "",
+          price: "$1.99",
         },
       ],
     },
   ];
+
 
   return (
     <main className="min-h-screen mt-18 py-12 bg-base-100">
@@ -165,10 +378,11 @@ export default function MenuPage() {
           {menuCategories.map((category, index) => (
             <motion.section
               key={index}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-100px" }}
+              initial={"hidden"}
               variants={staggerContainer}
+              animate={index === 0 ? "visible" : undefined}
+              whileInView={index !== 0 ? "visible" : undefined}
+              viewport={{ once: true }}
               className="scroll-mt-16"
               id={category.name.toLowerCase().replace(/\s+/g, "-")}
             >

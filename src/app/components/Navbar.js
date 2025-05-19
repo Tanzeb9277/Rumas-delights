@@ -1,140 +1,202 @@
 "use client";
-import React from "react";
-import { usePathname } from "next/navigation";
-import clsx from "clsx";
-import Link from "next/link";
 
-const Navbar = () => {
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+
+export default function Navbar() {
   const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Handle scroll effect for navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isMenuOpen]);
+
+  const isActive = (path) => pathname === path;
+
+  const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/menu", label: "Menu" },
+    { href: "/about", label: "About" },
+  ];
 
   return (
-    <div className="drawer fixed top-0 left-0 right-0 z-50">
-      <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col">
-        <div className="w-full navbar bg-secondary">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? "bg-base-200 shadow-md py-2" : "bg-transparent py-4"
+      }`}
+    >
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between">
           {/* Logo */}
+          <Link href="/" className="relative z-50">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className={`font-bold text-2xl ${
+                scrolled || isMenuOpen || pathname !== "/"
+                  ? "text-base-content"
+                  : "text-primary-content"
+              }`}
+            >
+              Ruma&apos;s Delights
+            </motion.div>
+          </Link>
 
-          <div className="flex-1 px-2 mx-2 font-bold text-secondary-content text-xl">
-            <Link href="/" className="text-xl">
-              <img
-                src="/images/logo.png"
-                alt="Ruma's Delights Logo"
-                className="w-16 h-16 mr-2"
-              />
-            </Link>
-          </div>
-          <div className="flex-none lg:hidden">
-            <label htmlFor="my-drawer" className="btn btn-square btn-secondary">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`px-4 py-2 rounded-lg transition-colors relative ${
+                  isActive(link.href)
+                    ? "text-base-content-300 font-medium"
+                    : scrolled || pathname !== "/"
+                    ? "text-base-content hover:text-base-content/80"
+                    : "text-primary-content hover:text-white/80"
+                }`}
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4 6h16M4 12h16m-7 6h7"
-                />
-              </svg>
-            </label>
-          </div>
-          <div className="flex-none hidden lg:block">
-            <ul className="menu menu-horizontal px-1">
-              <li>
-                <Link
-                  href="/"
-                  className={clsx({
-                    "text-secondary-content font-bold": pathname === "/",
-                  })}
+                {link.label}
+                {isActive(link.href) && (
+                  <motion.div
+                    layoutId="navbar-indicator"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
+                    initial={false}
+                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                  />
+                )}
+              </Link>
+            ))}
+            <Link href="tel:4045551234" className="btn btn-primary btn-sm ml-2">
+              Order Now
+            </Link>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden relative z-50 btn btn-circle btn-ghost"
+            aria-label="Toggle menu"
+          >
+            <AnimatePresence mode="wait">
+              {isMenuOpen ? (
+                <motion.div
+                  key="close"
+                  initial={{ opacity: 0, rotate: -90 }}
+                  animate={{ opacity: 1, rotate: 0 }}
+                  exit={{ opacity: 0, rotate: 90 }}
+                  transition={{ duration: 0.2 }}
                 >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/menu"
-                  className={clsx({
-                    "text-secondary-content font-bold": pathname === "/menu",
-                  })}
+                  <X
+                    className={`w-6 h-6 ${
+                      scrolled || pathname !== "/"
+                        ? "text-primary"
+                        : "text-primary"
+                    }`}
+                  />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="menu"
+                  initial={{ opacity: 0, rotate: 90 }}
+                  animate={{ opacity: 1, rotate: 0 }}
+                  exit={{ opacity: 0, rotate: -90 }}
+                  transition={{ duration: 0.2 }}
                 >
-                  Menu
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/about"
-                  className={clsx({
-                    "text-secondary-content font-bold":
-                      pathname === "/about",
-                  })}
-                >
-                  Our Story
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/order"
-                  className={clsx({
-                    "text-secondary-content font-bold": pathname === "/order",
-                  })}
-                >
-                  Order
-                </Link>
-              </li>
-            </ul>
-          </div>
+                  <Menu
+                    className={`w-6 h-6 ${
+                      scrolled || pathname !== "/"
+                        ? "text-base-content"
+                        : "text-primary-content"
+                    }`}
+                  />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </button>
         </div>
       </div>
-      <div className="drawer-side">
-        <label htmlFor="my-drawer" className="drawer-overlay z-30"></label>
-        <ul className="menu p-4 h-full w-2/3 bg-secondary text-base-content z-50">
-          <li>
-            <Link
-              href="/"
-              className={clsx({
-                "text-secondary-content font-bold": pathname === "/",
-              })}
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/menu"
-              className={clsx({
-                "text-secondary-content font-bold": pathname === "/menu",
-              })}
-            >
-              Menu
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/about"
-              className={clsx({
-                "text-secondary-content font-bold": pathname === "/our-story",
-              })}
-            >
-              Our Story
-            </Link>
-          </li>
-          <li>
-            <a
-              href="/order"
-              className={clsx({
-                "text-secondary-content font-bold": pathname === "/order",
-              })}
-            >
-              Order
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  );
-};
 
-export default Navbar;
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
+              onClick={() => setIsMenuOpen(false)}
+            />
+
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="fixed top-0 right-0 bottom-0 w-full max-w-xs bg-base-100 z-40 shadow-xl"
+            >
+              <div className="flex flex-col h-full p-6 pt-24">
+                <nav className="flex flex-col space-y-2">
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setIsMenuOpen(false)}
+                      className={`py-3 px-4 text-lg rounded-lg transition-colors ${
+                        isActive(link.href)
+                          ? "bg-base-300 text-base-content font-medium"
+                          : "hover:bg-base-200"
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </nav>
+
+                <div className="mt-auto pt-6 border-t border-base-300">
+                  <Link
+                    href="tel:4045551234"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="btn btn-primary w-full"
+                  >
+                    Order Now
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </header>
+  );
+}

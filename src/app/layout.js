@@ -1,20 +1,25 @@
-'use client'
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
-import Footbar from "./components/Footbar";
+import Footer from "./components/Footer";
+import PageTransition from "./components/PageTransition";
 
-import { usePathname } from "next/navigation";
-import { AnimatePresence, motion } from "framer-motion";
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata = {
+  title: "Ruma's Delights",
+  description: "Authentic Bengali Cuisine in Atlanta",
+};
 
 export default function RootLayout({ children }) {
-  const pathname = usePathname();
-
   return (
     <html lang="en" data-theme="caramellatte">
-      <body>
-        <Navbar />
-          {children}
-        <Footbar />
+      <body className={inter.className}>
+        <div className="flex flex-col min-h-screen">
+          <Navbar />
+          <PageTransition>{children}</PageTransition>
+          <Footer />
+        </div>
       </body>
     </html>
   );

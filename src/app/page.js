@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <main className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen flex items-center justify-between overflow-hidden">
         <div className="absolute inset-0 z-0">
           {/* Background video */}
           <video
@@ -53,8 +53,7 @@ export default function Home() {
           <motion.div
             variants={fadeIn}
             className="inline-block p-2 bg-white/10 backdrop-blur-sm rounded-full mb-4"
-          >
-          </motion.div>
+          ></motion.div>
           <motion.h1
             variants={fadeIn}
             className="text-4xl md:text-6xl font-bold text-white mb-4"
@@ -109,16 +108,19 @@ export default function Home() {
           >
             {[
               {
-                name: "Ilish Bhapa",
-                desc: "Steamed hilsa fish with mustard sauce",
+                name: "Beef Bhuna",
+                desc: `Beef Bhuna is a traditional Bengali dish known for its deep, rich flavors and thick, spiced gravy. The word "bhuna" refers to the slow cooking process where spices and meat are fried and simmered together until the oil separates and the gravy thickens`,
+                imgUrl: "/images/featured-1.png",
               },
               {
-                name: "Kosha Mangsho",
-                desc: "Slow-cooked Bengali mutton curry",
+                name: "Shrimp Malai Curry",
+                desc: "Made with tender shrimp cooked in a rich, creamy coconut milk-based gravy",
+                imgUrl: "/images/featured-2.jpeg",
               },
               {
-                name: "Chingri Malai Curry",
-                desc: "Prawns cooked in coconut milk",
+                name: "Beef Tehari",
+                desc: "Fragrant, spicy, and flavorful combination of tender beef cooked together with aromatic basmati rice and a rich blend of spices",
+                imgUrl: "/images/featured-3.jpeg",
               },
             ].map((dish, i) => (
               <motion.div
@@ -130,9 +132,7 @@ export default function Home() {
               >
                 <figure className="relative h-64">
                   <Image
-                    src={`/placeholder.svg?height=600&width=600&text=${encodeURIComponent(
-                      dish.name
-                    )}`}
+                    src={dish.imgUrl}
                     alt={dish.name}
                     fill
                     className="object-cover"
@@ -185,16 +185,16 @@ export default function Home() {
           >
             {[
               {
-                text: "The most authentic Bengali food I've had outside of Kolkata. Ruma's Delights truly lives up to its name!",
-                author: "Sarah J.",
+                text: "I had a splendid time here! Took me back to Bangladesh.",
+                author: "Anaida H.",
               },
               {
-                text: "The Ilish Bhapa transported me back to my grandmother's kitchen in Dhaka. Absolutely delicious!",
-                author: "Rahim M.",
+                text: "Visited for the first time and had an amazing experience! The food was fresh, flavorful, and truly authentic, from the soft parathas to the rich, delicious curries. You can tell everything is made with care. The service was warm and welcoming. Highly recommend to anyone looking for great Bangladeshi cuisine!!",
+                author: "Akash H.",
               },
               {
-                text: "A hidden gem in Atlanta! The flavors are bold, authentic and the service is exceptional.",
-                author: "Michael T.",
+                text: "Great service and delicious food!",
+                author: "Sarah B.",
               },
             ].map((testimonial, i) => (
               <motion.div
