@@ -72,26 +72,24 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-2xl font-bold mb-4 text-primary">
-              From Dhaka to Atlanta
+              From Dhaka to Georgia
             </h2>
             <div className="space-y-4 text-base-content/80">
               <p>
-                Ruma's Delights was founded in 2010 by Ruma Ahmed, who brought
-                her family's treasured recipes from Dhaka, Bangladesh to
-                Atlanta, Georgia. What started as a small catering business from
-                her home kitchen quickly gained popularity among the local
-                Bengali community.
+                Ruma's Delights was founded in 2001, as a
+                small catering gig, primarily serving the masjid community of
+                Lilburn, Georgia, especially during Ramadan, Eids’ and other
+                gatherings.
               </p>
               <p>
-                In 2015, encouraged by the overwhelming response to her
-                authentic cooking, Ruma opened her first restaurant in the heart
-                of Atlanta. Her mission was simple: to share the rich culinary
-                heritage of Bengal with the diverse population of Atlanta.
+                During the lockdown for Covid in 2020, the business took a new
+                direction with restaurants closing and a renewed public interest
+                in the sweets offered.
               </p>
               <p>
                 Today, Ruma's Delights stands as a culinary landmark in Atlanta,
                 serving authentic Bengali cuisine that transports diners to the
-                streets of Dhaka and Kolkata. Every dish is prepared with love,
+                streets of Dhaka. Every dish is prepared with love,
                 using traditional spices and cooking techniques that have been
                 passed down through generations.
               </p>
@@ -127,7 +125,7 @@ export default function AboutPage() {
               {
                 title: "Community",
                 description:
-                  "We believe in creating a space where the Bengali community in Atlanta can connect with their roots, and where others can discover the rich culture of Bengal.",
+                  "We believe in creating a space where the Bengali community in Georgia can connect with their roots, and where others can discover the rich culture of Bengal.",
               },
               {
                 title: "Quality",
@@ -172,7 +170,7 @@ export default function AboutPage() {
                     <div>
                       <h3 className="font-medium">Address</h3>
                       <p className="text-base-content/70">
-                        3302 Shallowford Road, Atlanta, GA 30341
+                        3302 Shallowford Road, Chamblee, GA 30341
                       </p>
                     </div>
                   </div>
