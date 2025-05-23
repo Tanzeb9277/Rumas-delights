@@ -12,7 +12,7 @@ const Footer = () => {
               Ruma&apos;s Delights
             </h3>
             <p className="mb-4">
-              Authentic Bengali cuisine in the heart of Atlanta, Georgia.
+              Authentic Bengali cuisine in the heart of Georgia.
             </p>
             <div className="text-info-content/60 flex space-x-4 items-center place-content-center">
               <Link

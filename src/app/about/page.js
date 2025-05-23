@@ -87,7 +87,7 @@ export default function AboutPage() {
                 in the sweets offered.
               </p>
               <p>
-                Today, Ruma's Delights stands as a culinary landmark in Atlanta,
+                Today, Ruma's Delights stands as a culinary landmark in Georgia,
                 serving authentic Bengali cuisine that transports diners to the
                 streets of Dhaka. Every dish is prepared with love,
                 using traditional spices and cooking techniques that have been

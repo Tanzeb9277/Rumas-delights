@@ -64,7 +64,7 @@ export default function Home() {
             variants={fadeIn}
             className="text-xl md:text-2xl text-white/90 max-w-2xl mb-8"
           >
-            Authentic Bengali Cuisine in the Heart of Atlanta
+            Authentic Bengali Cuisine in the Heart of Georgia
           </motion.p>
           <motion.div
             variants={fadeIn}
@@ -238,7 +238,7 @@ export default function Home() {
                     <div>
                       <h3 className="font-medium">Address</h3>
                       <p className="text-base-content/70">
-                        3302 Shallowford Road, Atlanta, GA 30341
+                        3302 Shallowford Road, Chamblee, GA 30341
                       </p>
                     </div>
                   </div>
