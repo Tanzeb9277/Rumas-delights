@@ -38,7 +38,6 @@ export default function Home() {
             loop
             muted
             playsInline
-            poster="/images/hero-pic.jpg"
           />
 
           {/* Dark overlay */}
