@@ -1,30 +1,27 @@
-"use client";
+import React from "react";
+import {
+  FaUtensils,
+  FaConciergeBell,
+  FaGlobe,
+  FaLeaf,
+  FaBreadSlice,
+  FaIceCream,
+  FaGlassWhiskey,
+  FaFish,
+} from "react-icons/fa";
 
-import Image from "next/image";
-import { motion } from "framer-motion";
-
-const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6 },
-  },
+const iconMap = {
+  Appetizers: <FaConciergeBell className="text-xl" />, // bell for starters
+  Entreeés: <FaFish className="text-xl" />, // fish for main dishes
+  "International Menu": <FaGlobe className="text-xl" />,
+  Sides: <FaLeaf className="text-xl" />, // leaf for light dishes
+  "Rice Dishes": <FaUtensils className="text-xl" />, // plate & cutlery
+  Breads: <FaBreadSlice className="text-xl" />,
+  Desserts: <FaIceCream className="text-xl" />,
+  Drinks: <FaGlassWhiskey className="text-xl" />,
 };
 
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-export default function MenuPage() {
-  // Menu categories and items
-  const menuCategories = [
+const menuCategories = [
     {
       name: "Appetizers",
       items: [
@@ -58,7 +55,7 @@ export default function MenuPage() {
       ],
     },
     {
-      name: "Main Courses",
+      name: "Entreeés",
       items: [
         {
           name: "Butter Chicken",
@@ -67,13 +64,25 @@ export default function MenuPage() {
           price: "$11.99",
         },
         {
+          name: "Fried Chicken",
+          description:
+            "Southern style fried chicken, seasoned with a blend of spices and herbs, then deep-fried to golden perfection, served with fries",
+          price: "$9.99",
+        },
+        {
+          name: "Grilled Chicken",
+          description:
+            "Made with marinated chicken pieces that are grilled to perfection",
+          price: "$9.99",
+        },
+        {
           name: "Beef Bhuna",
           description: `Beef Bhuna is a traditional Bengali dish known for its deep, rich flavors and thick, spiced gravy. The word "bhuna" refers to the slow cooking process where spices and meat are fried and simmered together until the oil separates and the gravy thickens`,
           price: "$11.99",
         },
         {
           name: "Karrai Ghost (Goat)",
-          description: `Tender pieces of goat meat cooked in a rich, spicy gravy with a blend of aromatic spices`,
+          description: "Tender pieces of goat meat cooked in a rich, spicy gravy with a blend of aromatic spices",
           price: "$14.99",
         },
         {
@@ -118,7 +127,7 @@ export default function MenuPage() {
         },
         {
           name: "Veggie Burger with fries",
-          description: `Delicious and satisfying plant-based alternative to the classic burger meal`,
+          description: "Delicious and satisfying plant-based alternative to the classic burger meal",
           price: "$9.99",
         },
         {
@@ -354,97 +363,33 @@ export default function MenuPage() {
   ];
 
 
+const Menu = () => {
   return (
-    <main className="min-h-screen mt-18 py-12 bg-base-100">
-      <div className="container px-4 md:px-6 mx-auto">
-        {/* Menu Header */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeIn}
-          className="text-center mb-12"
-        >
-          <h1 className="text-4xl font-bold mb-4">Our Menu</h1>
-          <div className="w-20 h-1 bg-primary mx-auto"></div>
-          <p className="mt-4 text-base-content/80 max-w-2xl mx-auto">
-            Experience the authentic flavors of Bengal with our carefully
-            crafted dishes, prepared with traditional spices and cooking
-            techniques.
-          </p>
-        </motion.div>
-
-        {/* Menu Categories */}
-        <div className="space-y-16">
-          {menuCategories.map((category, index) => (
-            <motion.section
-              key={index}
-              initial={"hidden"}
-              variants={staggerContainer}
-              animate={index === 0 ? "visible" : undefined}
-              whileInView={index !== 0 ? "visible" : undefined}
-              viewport={{ once: true }}
-              className="scroll-mt-16"
-              id={category.name.toLowerCase().replace(/\s+/g, "-")}
-            >
-              <motion.div variants={fadeIn} className="flex items-center mb-8">
-                <h2 className="text-2xl font-bold text-primary">
-                  {category.name}
-                </h2>
-                <div className="ml-4 flex-1 h-px bg-base-300"></div>
-              </motion.div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {category.items.map((item, itemIndex) => (
-                  <motion.div
-                    key={itemIndex}
-                    variants={fadeIn}
-                    whileHover={{ x: 5 }}
-                    className="flex gap-4"
-                  >
-                    <div className="relative w-24 h-24 rounded-md overflow-hidden flex-shrink-0">
-                      <Image
-                        src={`/placeholder.svg?height=200&width=200&text=${encodeURIComponent(
-                          item.name
-                        )}`}
-                        alt={item.name}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex justify-between items-baseline mb-1">
-                        <h3 className="font-medium">{item.name}</h3>
-                        <span className="text-secondary font-medium">
-                          {item.price}
-                        </span>
-                      </div>
-                      <p className="text-base-content/70 text-sm">
-                        {item.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
+    <div className="p-12 mt-6 md:p-24 space-y-6">
+      {menuCategories.map((category, index) => (
+        <div key={index} className="bg-base-100 shadow-md rounded-box p-4">
+          <div className="flex items-center gap-2 mb-4">
+            {iconMap[category.name] || <FaUtensils className="text-xl" />}
+            <h2 className="text-xl font-bold">{category.name}</h2>
+          </div>
+          <div className="grid gap-4">
+            {category.items.map((item, idx) => (
+              <div
+                key={idx}
+                className="border border-base-200 rounded-box p-4 hover:shadow-md"
+              >
+                <h3 className="text-lg font-semibold">{item.name}</h3>
+                <p className="text-sm text-base-content/70">
+                  {item.description}
+                </p>
+                <p className="text-base font-bold mt-2">{item.price}</p>
               </div>
-            </motion.section>
-          ))}
+            ))}
+          </div>
         </div>
-
-        {/* Special Dietary Note */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeIn}
-          className="mt-16 p-6 bg-base-200 rounded-lg"
-        >
-          <h3 className="text-lg font-medium mb-2">Dietary Information</h3>
-          <p className="text-base-content/80">
-            Please inform your server of any allergies or dietary restrictions.
-            Many of our dishes can be prepared to accommodate vegetarian, vegan,
-            and gluten-free diets. Items marked with (V) are vegetarian.
-          </p>
-        </motion.div>
-      </div>
-    </main>
+      ))}
+    </div>
   );
-}
+};
+
+export default Menu;

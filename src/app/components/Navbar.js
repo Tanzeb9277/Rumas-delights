@@ -1,10 +1,17 @@
 "use client";
-
+import { Euphoria_Script } from "next/font/google";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+
+const euphoriaScript = Euphoria_Script({
+  variable: "--font-euphoria-script",
+  subsets: ["latin"],
+  weight: "400",
+});
+
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -60,13 +67,13 @@ export default function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className={`font-bold text-2xl ${
+              className={`text-2xl ${
                 scrolled || isMenuOpen || pathname !== "/"
                   ? "text-base-content"
                   : "text-primary-content"
               }`}
             >
-              Ruma&apos;s Delights
+              <span className={`${euphoriaScript.className} text-4xl`}>Ruma&apos;s</span> Delights
             </motion.div>
           </Link>
 

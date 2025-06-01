@@ -76,10 +76,9 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-4 text-base-content/80">
               <p>
-                Ruma's Delights was founded in 2001, as a
-                small catering gig, primarily serving the masjid community of
-                Lilburn, Georgia, especially during Ramadan, Eids’ and other
-                gatherings.
+                Ruma's Delights was founded in 2001, as a small catering gig,
+                primarily serving the masjid community of Lilburn, Georgia,
+                especially during Ramadan, Eids’ and other gatherings.
               </p>
               <p>
                 During the lockdown for Covid in 2020, the business took a new
@@ -89,9 +88,9 @@ export default function AboutPage() {
               <p>
                 Today, Ruma's Delights stands as a culinary landmark in Georgia,
                 serving authentic Bengali cuisine that transports diners to the
-                streets of Dhaka. Every dish is prepared with love,
-                using traditional spices and cooking techniques that have been
-                passed down through generations.
+                streets of Dhaka. Every dish is prepared with love, using
+                traditional spices and cooking techniques that have been passed
+                down through generations.
               </p>
             </div>
           </motion.div>
@@ -196,12 +195,21 @@ export default function AboutPage() {
                     <div>
                       <h3 className="font-medium">Hours</h3>
                       <p className="text-base-content/70">
-                        Monday - Thursday: 11am - 10pm
+                        Monday 11:00am - 10:00pm
+                      </p>
+                      <p className="text-base-content/70">Tuesday - Closed</p>
+                      <p className="text-base-content/70">
+                        Wednesday 11:00am - 10:00pm
                       </p>
                       <p className="text-base-content/70">
-                        Friday - Saturday: 11am - 11pm
+                        Thursday 11:00am - 10:00pm
                       </p>
-                      <p className="text-base-content/70">Sunday: 12pm - 9pm</p>
+                      <p className="text-base-content/70">
+                        Friday 11:00am - 11:00pm
+                      </p>
+                      <p className="text-base-content/70">
+                        Saturday & Sunday 11:30am - 11:00pm
+                      </p>
                     </div>
                   </div>
                 </div>
