@@ -142,6 +142,7 @@ export default function Home() {
                     alt={dish.name}
                     fill
                     className="object-cover"
+                    loading="lazy"
                   />
                 </figure>
                 <div className="card-body">
