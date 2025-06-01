@@ -224,6 +224,7 @@ export default function AboutPage() {
                     allowFullScreen=""
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
+                    title="Ruma's Delights Location"
                   ></iframe>
                 </div>
               </div>

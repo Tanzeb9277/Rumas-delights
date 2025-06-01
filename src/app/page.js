@@ -5,6 +5,7 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowRight, MapPin, Phone, Mail, Clock } from "lucide-react";
 
+
 const euphoriaScript = Euphoria_Script({
   variable: "--font-euphoria-script",
   subsets: ["latin"],
@@ -64,7 +65,12 @@ export default function Home() {
             variants={fadeIn}
             className="text-5xl md:text-6xl text-white mb-4"
           >
-            <span className={`${euphoriaScript.className} text-6xl md:text-7xl`}>Ruma&apos;s</span> Delights
+            <span
+              className={`${euphoriaScript.className} text-6xl md:text-7xl`}
+            >
+              Ruma&apos;s
+            </span>{" "}
+            Delights
           </motion.h1>
           <motion.p
             variants={fadeIn}
@@ -143,6 +149,7 @@ export default function Home() {
                     fill
                     className="object-cover"
                     loading="lazy"
+                    title="Delicious Bengali Dish"
                   />
                 </figure>
                 <div className="card-body">
@@ -300,6 +307,7 @@ export default function Home() {
                       allowFullScreen=""
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
+                      title="Ruma's Delights Location"
                     ></iframe>
                   </div>
                 </div>
