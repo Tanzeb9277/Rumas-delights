@@ -56,9 +56,12 @@ const Footer = () => {
               Hours
             </h3>
             <ul className="space-y-1">
-              <li>Monday - Thursday: 11am - 10pm</li>
-              <li>Friday - Saturday: 11am - 11pm</li>
-              <li>Sunday: 12pm - 9pm</li>
+              <li>Monday 11:00am - 10:00pm</li>
+              <li>Tuesday - Closed</li>
+              <li>Wednesday 11:00am - 10:00pm</li>
+              <li>Thursday 11:00am - 10:00pm</li>
+              <li>Friday 11:00am - 11:00pm</li>
+              <li>Saturday & Sunday 11:30am - 11:00pm</li>
             </ul>
           </div>
         </div>
