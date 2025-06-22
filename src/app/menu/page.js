@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import {
   FaUtensils,
   FaConciergeBell,
@@ -364,9 +365,45 @@ const menuCategories = [
 
 
 const Menu = () => {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const allCategories = ["All", ...menuCategories.map(cat => cat.name)];
+
+  const filteredCategories = selectedCategory === "All" 
+    ? menuCategories 
+    : menuCategories.filter(cat => cat.name === selectedCategory);
+
   return (
-    <div className="p-12 mt-6 md:p-24 space-y-6">
-      {menuCategories.map((category, index) => (
+    <div className="p-4 md:p-24 space-y-6">
+      {/* Mobile Category Bar */}
+      <div className="md:hidden mt-12">
+        <div className="bg-base-100 shadow-md rounded-box p-4 mb-6">
+          <h3 className="text-lg font-semibold mb-3">Categories</h3>
+          <div className="flex gap-2 overflow-x-auto pb-2">
+            {allCategories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`flex items-center gap-2 px-3 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
+                  selectedCategory === category
+                    ? "bg-primary text-primary-content"
+                    : "bg-base-200 text-base-content hover:bg-base-300"
+                }`}
+              >
+                {category === "All" ? (
+                  <FaUtensils className="text-sm" />
+                ) : (
+                  iconMap[category] || <FaUtensils className="text-sm" />
+                )}
+                {category}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Menu Items */}
+      {filteredCategories.map((category, index) => (
         <div key={index} className="bg-base-100 shadow-md rounded-box p-4">
           <div className="flex items-center gap-2 mb-4">
             {iconMap[category.name] || <FaUtensils className="text-xl" />}
