@@ -289,33 +289,33 @@ const menuCategories = [
       name: "Desserts",
       items: [
         {
-          name: "Balushai",
+          name: "Balushai (One Box)",
           description: "Rich, deep-fried dessert known for its flaky texture",
-          price: "$2",
+          price: "$8",
         },
         {
-          name: "Mishti Doi",
+          name: "Mishti Doi (One Box)",
           description:
             "Traditional Bengali sweetened yogurt dessert, loved for its creamy texture and caramelized sweetness",
-          price: "$2",
+          price: "$8",
         },
         {
-          name: "Shondesh",
+          name: "Shondesh (One Box)",
           description:
             "Classic Bengali sweet made primarily from fresh paneer (chena) and sugar",
-          price: "$1.99",
+          price: "$10",
         },
         {
-          name: "Chomchom",
+          name: "Chomchom (One Box)",
           description:
             "Classic Bengali sweet known for its soft, spongy texture and sweet, fragrant flavor",
-          price: "$2",
+          price: "$8",
         },
         {
-          name: "Kalojam",
+          name: "Kalojam (One Box)",
           description:
             "Rich and popular South Asian sweet known for its deep, dark color and intense flavor",
-          price: "$2",
+          price: "$8",
         },
         {
           name: "Kheer",
@@ -323,15 +323,15 @@ const menuCategories = [
           price: "$5",
         },
         {
-          name: "Malaichop",
+          name: "Malaichop (One Box)",
           description: "Fresh, creamy, malai-based dessert",
-          price: "$5",
+          price: "$10",
         },
         {
-          name: "Pranhara",
+          name: "Pranhara (One Box)",
           description:
             "Sweet stuffed flatbread made with a sweet lentil filling",
-          price: "$2",
+          price: "$10",
         },
       ],
     },
