@@ -288,10 +288,10 @@ export default function Home() {
                           Thursday 11:00am - 10:00pm
                         </p>
                         <p className="text-base-content/70">
-                          Friday 11:00am - 11:00pm
+                          Friday 11:00am - 10:00pm
                         </p>
                         <p className="text-base-content/70">
-                          Saturday & Sunday 11:30am - 11:00pm
+                          Saturday & Sunday 11:30am - 10:00pm
                         </p>
                       </div>
                     </div>

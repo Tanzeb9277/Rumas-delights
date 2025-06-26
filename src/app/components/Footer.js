@@ -60,8 +60,8 @@ const Footer = () => {
               <li>Tuesday - Closed</li>
               <li>Wednesday 11:00am - 10:00pm</li>
               <li>Thursday 11:00am - 10:00pm</li>
-              <li>Friday 11:00am - 11:00pm</li>
-              <li>Saturday & Sunday 11:30am - 11:00pm</li>
+              <li>Friday 11:00am - 10:00pm</li>
+              <li>Saturday & Sunday 11:30am - 10:00pm</li>
             </ul>
           </div>
         </div>

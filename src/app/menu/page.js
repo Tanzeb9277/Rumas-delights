@@ -230,7 +230,7 @@ const menuCategories = [
         {
           name: "Rice Pulao",
           description: "Fragrant and lightly spiced rice",
-          price: "$2",
+          price: "$5",
         },
         {
           name: "Beef Biryani",
@@ -247,7 +247,7 @@ const menuCategories = [
           name: "Beef Tehari",
           description:
             "Fragrant, spicy, and flavorful combination of tender beef cooked together with aromatic basmati rice and a rich blend of spices",
-          price: "$10",
+          price: "$12",
         },
       ],
     },
@@ -258,7 +258,7 @@ const menuCategories = [
           name: "Porota (Paratha)",
           description:
             "South Asian flatbread known for its flaky, layered texture and rich, buttery taste",
-          price: "$2",
+          price: "$3",
         },
         {
           name: "Moghlai Porota",
@@ -266,7 +266,7 @@ const menuCategories = [
             "Golden, flaky, and crisp South Asian flatbread stuffed with a savory filling",
           price: "$6",
         },
-        { name: "Luchi", description: "Deep-fried flatbread", price: "$1.99" },
+        { name: "Luchi", description: "Deep-fried flatbread", price: "$2" },
         {
           name: "Daal Puri",
           description:
@@ -282,7 +282,7 @@ const menuCategories = [
         {
           name: "Roti",
           description: "Whole wheat flatbread",
-          price: "$1",
+          price: "$2",
         },
       ],
     },
