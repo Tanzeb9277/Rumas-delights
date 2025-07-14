@@ -369,6 +369,9 @@ const Menu = () => {
   const menuRef = React.useRef(null);
 
   const allCategories = ["All", ...menuCategories.map(cat => cat.name)];
+  
+  // Debug: log the categories to see what's being generated
+  console.log("All categories:", allCategories);
 
   const filteredCategories = selectedCategory === "All" 
     ? menuCategories 
@@ -385,28 +388,31 @@ const Menu = () => {
   return (
     <div className="p-4 md:p-24 space-y-6" ref={menuRef}>
       {/* Mobile Category Bar */}
-      <div className="md:hidden sticky top-[55px] z-10 bg-base-100 mt-[50px]">
-        <div className="bg-base-100 shadow-md rounded-box p-4 mb-6">
-          <h3 className="text-lg font-semibold mb-3">Categories</h3>
+      <div className="md:hidden sticky top-[55px] z-10 bg-base-100 shadow-md mt-[50px] w-screen -mx-4">
+        <div className="p-4">
+          <h3 className="text-lg font-semibold mb-3 text-base-content">Categories</h3>
           <div className="flex gap-2 overflow-x-auto pb-2">
-            {allCategories.map((category) => (
-              <button
-                key={category}
-                onClick={() => handleCategorySelect(category)}
-                className={`flex items-center gap-2 px-3 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
-                  selectedCategory === category
-                    ? "bg-primary text-primary-content"
-                    : "bg-base-200 text-base-content hover:bg-base-300"
-                }`}
-              >
-                {category === "All" ? (
-                  <FaUtensils className="text-sm" />
-                ) : (
-                  iconMap[category] || <FaUtensils className="text-sm" />
-                )}
-                {category}
-              </button>
-            ))}
+            {allCategories.map((category, index) => {
+              console.log(`Rendering category ${index}:`, category);
+              return (
+                <button
+                  key={category}
+                  onClick={() => handleCategorySelect(category)}
+                  className={`flex items-center gap-2 px-3 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
+                    selectedCategory === category
+                      ? "bg-black text-white"
+                      : "bg-white text-black hover:bg-gray-100"
+                  }`}
+                >
+                  {category === "All" ? (
+                    <FaUtensils className="text-sm" />
+                  ) : (
+                    iconMap[category] || <FaUtensils className="text-sm" />
+                  )}
+                  {category}
+                </button>
+              );
+            })}
           </div>
         </div>
       </div>
