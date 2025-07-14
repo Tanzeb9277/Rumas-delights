@@ -366,6 +366,7 @@ const menuCategories = [
 
 const Menu = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const menuRef = React.useRef(null);
 
   const allCategories = ["All", ...menuCategories.map(cat => cat.name)];
 
@@ -373,17 +374,25 @@ const Menu = () => {
     ? menuCategories 
     : menuCategories.filter(cat => cat.name === selectedCategory);
 
+  const handleCategorySelect = (category) => {
+    setSelectedCategory(category);
+    // Scroll to top of menu
+    if (menuRef.current) {
+      menuRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="p-4 md:p-24 space-y-6">
+    <div className="p-4 md:p-24 space-y-6" ref={menuRef}>
       {/* Mobile Category Bar */}
-      <div className="md:hidden mt-12">
+      <div className="md:hidden sticky top-[55px] z-10 bg-base-100 mt-[50px]">
         <div className="bg-base-100 shadow-md rounded-box p-4 mb-6">
           <h3 className="text-lg font-semibold mb-3">Categories</h3>
           <div className="flex gap-2 overflow-x-auto pb-2">
             {allCategories.map((category) => (
               <button
                 key={category}
-                onClick={() => setSelectedCategory(category)}
+                onClick={() => handleCategorySelect(category)}
                 className={`flex items-center gap-2 px-3 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
                   selectedCategory === category
                     ? "bg-primary text-primary-content"

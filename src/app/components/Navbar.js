@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import OrderPopup from "./OrderPopup";
 
 const euphoriaScript = Euphoria_Script({
   variable: "--font-euphoria-script",
@@ -17,6 +18,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isOrderPopupOpen, setIsOrderPopupOpen] = useState(false);
 
   // Handle scroll effect for navbar
   useEffect(() => {
@@ -102,9 +104,12 @@ export default function Navbar() {
                 )}
               </Link>
             ))}
-            <Link href="tel:4045551234" className="btn btn-primary btn-sm ml-2">
+            <button
+              onClick={() => setIsOrderPopupOpen(true)}
+              className="btn btn-primary btn-sm ml-2"
+            >
               Order Now
-            </Link>
+            </button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -191,19 +196,20 @@ export default function Navbar() {
                 </nav>
 
                 <div className="mt-auto pt-6 border-t border-base-300">
-                  <Link
-                    href="tel:4045551234"
-                    onClick={() => setIsMenuOpen(false)}
+                  <button
+                    onClick={() => setIsOrderPopupOpen(true)}
                     className="btn btn-primary w-full"
                   >
                     Order Now
-                  </Link>
+                  </button>
                 </div>
               </div>
             </motion.div>
           </>
         )}
       </AnimatePresence>
+
+      <OrderPopup isOpen={isOrderPopupOpen} onClose={() => setIsOrderPopupOpen(false)} />
     </header>
   );
 }
