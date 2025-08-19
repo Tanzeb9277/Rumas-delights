@@ -55,7 +55,7 @@ const menuCategories = [
           name: "Puffed Pastry",
           description:
             "Delicious puff pastries served with either chicken or beef filling",
-          price: "$3",
+          price: "$4",
           status: "active",
         },
       ],
@@ -214,10 +214,16 @@ const menuCategories = [
       name: "Sides",
       items: [
         {
-          name: "Haleem",
+          name: "Beef Haleem",
           description:
             "Deeply flavorful and hearty dish slow-cooked with meat, lentils, and grains, and a combination of traditional spices",
-          price: "$6",
+          price: "$8",
+          status: "active",
+        },        {
+          name: "Goat Haleem",
+          description:
+            "Deeply flavorful and hearty dish slow-cooked with meat, lentils, and grains, and a combination of traditional spices",
+          price: "$10",
           status: "active",
         },
         {
@@ -301,7 +307,7 @@ const menuCategories = [
           name: "Moghlai Porota",
           description:
             "Golden, flaky, and crisp South Asian flatbread stuffed with a savory filling",
-          price: "$6",
+          price: "$8",
           status: "active",
         },
         { name: "Luchi", description: "Deep-fried flatbread", price: "$2", status: "active" },
@@ -333,14 +339,14 @@ const menuCategories = [
         {
           name: "Balushai (One Box)",
           description: "Rich, deep-fried dessert known for its flaky texture",
-          price: "$8",
+          price: "$9",
           status: "active",
         },
         {
           name: "Mishti Doi (One Box)",
           description:
             "Traditional Bengali sweetened yogurt dessert, loved for its creamy texture and caramelized sweetness",
-          price: "$8",
+          price: "$9",
           status: "active",
         },
         {
@@ -354,14 +360,14 @@ const menuCategories = [
           name: "Chomchom (One Box)",
           description:
             "Classic Bengali sweet known for its soft, spongy texture and sweet, fragrant flavor",
-          price: "$8",
+          price: "$9",
           status: "active",
         },
         {
           name: "Kalojam (One Box)",
           description:
             "Rich and popular South Asian sweet known for its deep, dark color and intense flavor",
-          price: "$8",
+          price: "$9",
           status: "active",
         },
         {

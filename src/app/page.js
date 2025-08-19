@@ -278,20 +278,20 @@ export default function Home() {
                       <div>
                         <h3 className="font-medium">Hours</h3>
                         <p className="text-base-content/70">
-                          Monday 11:00am - 10:00pm
+                          Monday 12:00pm - 10:00pm
                         </p>
                         <p className="text-base-content/70">Tuesday - Closed</p>
                         <p className="text-base-content/70">
-                          Wednesday 11:00am - 10:00pm
+                          Wednesday 12:00pm - 10:00pm
                         </p>
                         <p className="text-base-content/70">
-                          Thursday 11:00am - 10:00pm
+                          Thursday 12:00pm - 10:00pm
                         </p>
                         <p className="text-base-content/70">
-                          Friday 11:00am - 10:00pm
+                          Friday 12:00pm - 10:00pm
                         </p>
                         <p className="text-base-content/70">
-                          Saturday & Sunday 11:30am - 10:00pm
+                          Saturday & Sunday 12:00pm - 10:00pm
                         </p>
                       </div>
                     </div>
