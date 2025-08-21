@@ -48,7 +48,7 @@ const Footer = () => {
               <p className="mt-2">(770) 717-7004</p>
               <p className="mb-2">(770) 617-8995</p>
 
-              <p>info@rumasdelights.com</p>
+              <p>rumasdelights@gmail.com</p>
             </address>
           </div>
           <div>

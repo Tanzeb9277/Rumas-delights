@@ -269,7 +269,7 @@ export default function Home() {
                       <div>
                         <h3 className="font-medium">Email</h3>
                         <p className="text-base-content/70">
-                          info@rumasdelights.com
+                          rumasdelights@gmail.com
                         </p>
                       </div>
                     </div>
